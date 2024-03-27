@@ -10,6 +10,19 @@
   min-height: 100vh;
 }
 
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  width: 100%;
+  z-index: 1000;
+  /* center it */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title {
   font-size: 2rem;
   margin-bottom: 1rem;

@@ -93,43 +93,45 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <h1 className={styles.title}>Welcome to your News Feed</h1>
-        <input
-          type="text"
-          placeholder="Enter your API token"
-          value={apiToken}
-          onChange={(e) => setApiToken(e.target.value)}
-        />
-        {!news.length && (
-          <p className={styles.description}>
-            Don't have an API token? Get it from{" "}
-            <a href="https://webz.io/products/news-api#lite" target="_blank">
-              here
-            </a>
-          </p>
-        )}
+        <div className={styles.stickyHeader}>
+          <input
+            type="text"
+            placeholder="Enter your API token"
+            value={apiToken}
+            onChange={(e) => setApiToken(e.target.value)}
+          />
+          {!news.length && (
+            <p className={styles.description}>
+              Don't have an API token? Get it from{" "}
+              <a href="https://webz.io/products/news-api#lite" target="_blank">
+                here
+              </a>
+            </p>
+          )}
 
-        <input
-          type="text"
-          placeholder="Search for news"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              fetchNews();
-            }
-          }}
-        />
-        <button className={styles.search} onClick={() => fetchNews()}>
-          Search
-        </button>
+          <input
+            type="text"
+            placeholder="Search for news"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                fetchNews();
+              }
+            }}
+          />
+          <button className={styles.search} onClick={() => fetchNews()}>
+            Search
+          </button>
 
-        {error && <span style={{ color: "red" }}>{error}</span>}
-        {!!meta.totalResults && (
-          <p>
-            Total Results: {meta.totalResults} | Requests Left:{" "}
-            {meta.requestsLeft}
-          </p>
-        )}
+          {error && <span style={{ color: "red" }}>{error}</span>}
+          {!!meta.totalResults && (
+            <p>
+              Total Results: {meta.totalResults} | Requests Left:{" "}
+              {meta.requestsLeft}
+            </p>
+          )}
+        </div>
         <div className={styles.news}>
           {news.map((post) => (
             <div key={post.thread.uuid} className={styles.post}>
@@ -153,13 +155,13 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div id="observer"></div>
         {!!meta.totalResults && (
           <p>
             Total Results: {meta.totalResults} | Requests Left:{" "}
             {meta.requestsLeft}
           </p>
         )}
-        <div id="observer"></div>
       </main>
       {inter.styles}
     </>
