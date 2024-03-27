@@ -1,0 +1,103 @@
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.news {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1rem;
+}
+
+.post {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.post h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post a {
+  color: blue;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+.post em {
+  background-color: rgb(240, 240, 143);
+  font-weight: bold;
+  font-style: normal;
+}
+
+.search {
+  padding: 5px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .news {
+    grid-template-columns: 1fr;
+  }
+
+  .post {
+    padding: 0.5rem;
+  }
+
+  .post h2 {
+    font-size: 1.25rem;
+  }
+
+  .post p {
+    font-size: 0.9rem;
+  }
+
+  .post em {
+    font-size: 1rem;
+  }
+
+  .post a {
+    font-size: 1rem;
+  }
+
+  .post a:hover {
+    font-size: 1rem;
+  }
+
+  .post a:visited {
+    font-size: 1rem;
+  }
+
+  .post a:active {
+    font-size: 1rem;
+  }
+}
